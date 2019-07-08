@@ -80,10 +80,10 @@ end
     
     end 
 
-    def createItem 
-        byebug
+    def createitem 
+        # byebug
 
-        @item = Item.create(name: params[:name] , description: params[:description] , user_id: params[:user_id] )
+        @item = Item.create(name: params[:name] , description: params[:description], goal: params[:goal], date: params[:date],  user_id: params[:user_id] )
         render json: @item
 
     end 

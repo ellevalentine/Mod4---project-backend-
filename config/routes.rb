@@ -12,6 +12,9 @@ Rails.application.routes.draw do
 
   post '/signup', to: 'users#signup'
 
+  post '/inventory', to: 'users#createitem'
+
+
   # post '/createPot', to: 'users#createItem'
 
 
