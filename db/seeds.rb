@@ -9,15 +9,15 @@ Item.destroy_all
 User.destroy_all
 Charity.destroy_all
 
-user1 = User.create(username: "Elle", password: "123456", balance: 1000)
-user2 =User.create(username: "Leah", password: "123456", balance: 1000)
-user3 =User.create(username: "Ranya", password: "123456", balance: 1000)
-user4 =User.create(username: "Tom", password: "123456", balance: 1000)
-user5 =User.create(username: "Ben", password: "123456", balance: 1000)
-user5 =User.create(username: "Ines", password: "ines", balance: 1000)
+# user1 = User.create(username: "Elle", password: "123456", balance: 1000)
+# user2 =User.create(username: "Leah", password: "123456", balance: 1000)
+# user3 =User.create(username: "Ranya", password: "123456", balance: 1000)
+# user4 =User.create(username: "Tom", password: "123456", balance: 1000)
+# user5 =User.create(username: "Ben", password: "123456", balance: 1000)
+# user5 =User.create(username: "Ines", password: "ines", balance: 1000)
 
-Item.create(name: 'Postion', description: 'lalalal', user_id: user1.id )
-Item.create(name: 'HEllo', description: 'heheh', user_id: user2.id )
+# Item.create(name: 'Postion', description: 'lalalal', user_id: user1.id )
+# Item.create(name: 'HEllo', description: 'heheh', user_id: user2.id )
 
 refugee = Charity.create(name: "Everyone is welcome", description: "We are a charity based in London that helps asylum seekers apply for refugee status and, in parallel, help refugees settle in the UK.", address: "East London", website:"www.everyonewelcome.org.uk", logo: "./everyones-welcome.png", balance: 0)
 
