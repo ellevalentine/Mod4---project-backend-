@@ -1,6 +1,11 @@
 class CharityUsersController < ApplicationController
     before_action :find_charity_user, only: [:show]
 
+    def index
+        @charity_users = CharityUser.all
+        render json: @charity_users
+    end
+
     def show
         render json: @charity_user
     end 
@@ -12,7 +17,19 @@ class CharityUsersController < ApplicationController
     def create 
         @charity_user = CharityUser.new(charity_user_params)
         @charity_user.save
-        render json: @charity_user
+
+        user = User.find(params[:user_id])
+        user.balance -= params[:donation]
+        user.save 
+
+        charity = Charity.find(params[:charity_id])
+        charity.balance += params[:donation]
+        charity.save
+        
+        render json: {
+            @user,
+            Charity.all
+        }
     end 
 
 
