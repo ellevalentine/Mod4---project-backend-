@@ -30,7 +30,7 @@ def show # to be able to just see one user at a time
 def signin
     user = User.find_by(username: params[:username]) # grab a user by username
     if user && user.authenticate(params[:password])
-        render json: {username: user.username, token: issue_token({id: user.id}), id: user.id, balance:user.balance} # we do this so we dont get the whole user back but rather just the username and the token which we have access from all the helper methods 
+        render json: {username: user.username, token: issue_token({id: user.id}), id: user.id} # we do this so we dont get the whole user back but rather just the username and the token which we have access from all the helper methods 
     else
         render json: { error: 'Invalid Username/Password combination'}, status: 401 
     end
@@ -75,15 +75,15 @@ end
     def signup
         
              
-            @user = User.create(username: params[:username], password: params[:password], balance: 1000)
+            @user = User.create(username: params[:username], password: params[:password])
             render json: @user
     
     end 
 
-    def createitem 
-        # byebug
+    def createItem 
+        byebug
 
-        @item = Item.create(name: params[:name] , description: params[:description], goal: params[:goal], date: params[:date],  user_id: params[:user_id] )
+        @item = Item.create(name: params[:name] , description: params[:description] , user_id: params[:user_id] )
         render json: @item
 
     end 

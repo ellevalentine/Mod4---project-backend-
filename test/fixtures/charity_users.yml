@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  charity: one
+  user: one
+  donation: 1
+
+two:
+  charity: two
+  user: two
+  donation: 1
