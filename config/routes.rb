@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :charity_users
+  resources :charities, only: [:index, :show]
   resources :users, only: [:index, :show]
 
   # java script (fetch url) | rails (controller/method)
