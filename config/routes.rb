@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   post '/inventory', to: 'users#createItem'
 
-  
+  patch '/users/:id', to: 'users#updateSpending'
 
 
   # post '/createPot', to: 'users#createItem'
