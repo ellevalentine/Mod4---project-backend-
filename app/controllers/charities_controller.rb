@@ -6,10 +6,10 @@ class CharitiesController < ApplicationController
     end
 
     def show #to be able to see one charity at a time 
-        charity = Charity.find_by(id: params[:id])
+        @charity = Charity.find_by(id: params[:id])
 
         if charity 
-            render json: user
+            render json: @charity
         else
             render json: {
                 error: 'Charity not found'

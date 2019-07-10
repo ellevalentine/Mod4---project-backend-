@@ -26,9 +26,10 @@ class CharityUsersController < ApplicationController
         charity.balance += params[:donation]
         charity.save
         
-        render json: {
-            @user,
-            Charity.all
+        render json: { 
+            charity_user: @charity_user,
+            user: user,
+            charities: Charity.all
         }
     end 
 
