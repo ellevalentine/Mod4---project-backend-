@@ -58,6 +58,7 @@ end
 #________________________________________________________________________________________________________
 
     def inventory
+        
         user = get_current_user # verify the user by using our helper method 
         if user  # if the user exists then we will render the users items -
             render json: user.items # we have access to user.items since we set out the realtionship for user to have many items 
@@ -84,7 +85,7 @@ end
         # byebug
 
         @item = Item.create(name: params[:name] , description: params[:description], goal: params[:goal], date: params[:date],  user_id: params[:user_id] )
-        render json: @item
+        render json: Item.where(user_id: params[:user_id])
 
     end 
 
