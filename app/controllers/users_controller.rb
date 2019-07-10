@@ -89,6 +89,19 @@ end
 
     end 
 
+    def updateSpending
+        
+        
+        @user = User.find_by( id: params[:id])
+        if @user
+            @user.update(daily: params[:daily], weekly: params[:weekly], monthly: params[:monthly])
+        else
+            render json: { error: "user not found"}, status: 404
+        end
+
+    end
+
+
 
 
 
