@@ -30,7 +30,7 @@ def show # to be able to just see one user at a time
 def signin
     user = User.find_by(username: params[:username]) # grab a user by username
     if user && user.authenticate(params[:password])
-        render json: {username: user.username, token: issue_token({id: user.id}), id: user.id, balance: user.balance, weekly: user.weekly, monthly: user.montly, daily: user.daily} # we do this so we dont get the whole user back but rather just the username and the token which we have access from all the helper methods 
+        render json: {username: user.username, token: issue_token({id: user.id}), id: user.id, balance: user.balance, weekly: user.weekly, monthly: user.monthly, daily: user.daily} # we do this so we dont get the whole user back but rather just the username and the token which we have access from all the helper methods 
     else
         render json: { error: 'Invalid Username/Password combination'}, status: 401 
     end
